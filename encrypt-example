@@ -1,0 +1,48 @@
+# ip4-testing
+# Tested on 
+# ~~~~~~~~~~~ https://www.onlinegdb.com/online_c_compiler ~~~~~~~~~~~~~~
+
+#include <stdio.h>
+
+int main()
+{
+    char hello[] = "Hello";
+    bitsOfChar(hello[0]);
+
+    return 0;
+}
+
+void bitsOfChar(char c) {
+    int i;
+    int mask = 0b1;
+
+    for(i = 7; 0 <= i; i--)
+        printf("%d", (c >> i) & mask);
+    
+    return;
+}
+
+void encrypt(char* text, char* hiddenMessage) {
+    int TEXT_LEN = strlen(text);
+    
+    if (TEXT_LEN < 16) // If the text length is less than the header
+        return;
+    
+    int i = 0;
+    int pixelCount = 0; 
+    
+    for (i = 0; i < TEXT_LEN; i++) {
+        
+        if (pixelCOunt < 16) {
+            text[i] = text[i] & (TEXT_LEN >> pixelCount) & 0b01;
+            pixelCount++;
+        } else {
+            int currentChar = (i - 16) % 8; // 8 is the length of a character
+            text[i] = text[i] & (hiddenMessage[])
+        }
+        
+        
+    }
+    
+    return;
+}
